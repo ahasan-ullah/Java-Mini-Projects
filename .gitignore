@@ -4,7 +4,6 @@ out/
 !**/src/test/**/out/
 out
 .idea
-.Java Mini Projects.iml
 
 ### Eclipse ###
 .apt_generated
