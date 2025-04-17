@@ -1,12 +1,10 @@
 package encryption.program;
-import java.util.ArrayList;
-import java.util.Scanner;
-import java.util.Random;
+import java.util.*;
 
 public class EncryptionProgram {
     private Scanner scanner;
     private Random random;
-    private ArrayList<Character>List;
+    private ArrayList<Character>list;
     private ArrayList<Character>shuffledList;
     private char character;
     private String line;
@@ -16,7 +14,7 @@ public class EncryptionProgram {
     public EncryptionProgram(){
         scanner=new Scanner(System.in);
         random=new Random();
-        List=new ArrayList<Character>();
+        list=new ArrayList<Character>();
         shuffledList=new ArrayList<Character>();
         character=' ';
 
@@ -52,7 +50,19 @@ public class EncryptionProgram {
         }
     }
     private void newKey(){
+        character=' ';
+        list.clear();
+        shuffledList.clear();
 
+        //empty character ascii value is 32
+        for(int i=32;i<127;i++){
+            list.add(Character.valueOf(character));
+            character++;
+        }
+
+        shuffledList=new ArrayList<Character>(list);
+        Collections.shuffle(shuffledList);
+        System.out.println("*A new key has been generated*");
     }
     private void getKey(){
 
