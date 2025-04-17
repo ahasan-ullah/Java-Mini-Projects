@@ -15,7 +15,6 @@ public class EncryptionProgram {
         scanner=new Scanner(System.in);
         random=new Random();
         list=new ArrayList<Character>();
-        shuffledList=new ArrayList<Character>();
         character=' ';
 
         newKey();
@@ -65,7 +64,15 @@ public class EncryptionProgram {
         System.out.println("*A new key has been generated*");
     }
     private void getKey(){
-
+        System.out.println("Key: ");
+        for(Character x: list){
+            System.out.print(x);
+        }
+        System.out.println();
+        for(Character x: shuffledList){
+            System.out.print(x);
+        }
+        System.out.println();
     }
     private void encrypt(){
 
