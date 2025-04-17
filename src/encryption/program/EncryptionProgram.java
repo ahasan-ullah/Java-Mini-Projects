@@ -95,7 +95,24 @@ public class EncryptionProgram {
         System.out.println();
     }
     private void decrypt(){
+        System.out.println("Enter a message to be encrypted");
+        String message=scanner.nextLine();
 
+        letters=message.toCharArray();
+
+        for(int i=0;i<letters.length;i++){
+            for(int j=0;j<shuffledList.size();j++){
+                if(letters[i]==shuffledList.get(j)){
+                    letters[i]=list.get(j);
+                    break;
+                }
+            }
+        }
+        System.out.println("Decrypted: ");
+        for(char x:letters){
+            System.out.print(x);
+        }
+        System.out.println();
     }
     private void quit(){
 
