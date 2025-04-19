@@ -10,14 +10,15 @@ public class TextEditor extends JFrame implements ActionListener {
     public TextEditor(){
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setTitle("Text Editor");
-        this.setSize(500, 500);
+        this.setSize(700, 600);
         this.setLayout(new FlowLayout());
         this.setLocationRelativeTo(null);
 
         textArea=new JTextArea();
-        textArea.setPreferredSize(new Dimension(450,450));
+        textArea.setPreferredSize(new Dimension(650,550));
         textArea.setLineWrap(true);
         textArea.setWrapStyleWord(true);
+        textArea.setFont(new Font("Arial",Font.PLAIN,20));
 
         this.add(textArea);
         this.setVisible(true);
