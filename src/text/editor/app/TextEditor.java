@@ -12,6 +12,7 @@ public class TextEditor extends JFrame implements ActionListener {
     private JScrollPane scrollPane;
     private JSpinner fontSizeSpinner;
     private JLabel fontLabel;
+    private JButton fontColorButton;
 
     public TextEditor(){
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -42,11 +43,21 @@ public class TextEditor extends JFrame implements ActionListener {
             }
         });
 
+        fontColorButton=new JButton("Color");
+        fontColorButton.addActionListener(this);
+
+        this.add(fontColorButton);
         this.add(fontLabel);
         this.add(fontSizeSpinner);
         this.add(scrollPane);
         this.setVisible(true);
     }
     @Override
-    public void actionPerformed(ActionEvent e){}
+    public void actionPerformed(ActionEvent e){
+        if(e.getSource()==fontColorButton){
+            JColorChooser colorChooser=new JColorChooser();
+            Color color=colorChooser.showDialog(null,"Choose a color",Color.BLACK);
+            textArea.setForeground(color);
+        }
+    }
 }
