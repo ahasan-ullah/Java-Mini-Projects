@@ -3,12 +3,14 @@ package text.editor.app;
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
+import java.util.Scanner;
 
 public class TextEditor extends JFrame implements ActionListener {
     private JTextArea textArea;
@@ -96,7 +98,32 @@ public class TextEditor extends JFrame implements ActionListener {
             textArea.setFont(new Font((String)fontBox.getSelectedItem(),Font.PLAIN,textArea.getFont().getSize()));
         }
         if(e.getSource()==openItem){
+            JFileChooser fileChooser=new JFileChooser();
+            fileChooser.setCurrentDirectory(new File("."));
+            FileNameExtensionFilter filter=new FileNameExtensionFilter("Text files","txt");
+            fileChooser.setFileFilter(filter);
 
+            int response=fileChooser.showOpenDialog(null);
+            if(response==JFileChooser.APPROVE_OPTION){
+                File file=new File(fileChooser.getSelectedFile().getAbsolutePath());
+                Scanner fileIn=null;
+
+                try{
+                    fileIn=new Scanner(file);
+                    if(file.isFile()){
+                        while(fileIn.hasNextLine()){
+                            String line=fileIn.nextLine()+"\n";
+                            textArea.append(line);
+                        }
+                    }
+                }
+                catch (FileNotFoundException e2){
+                    e2.printStackTrace();
+                }
+                finally {
+                    fileIn.close();
+                }
+            }
         }
         if(e.getSource()==saveItem){
             JFileChooser fileChooser=new JFileChooser();
