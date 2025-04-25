@@ -6,7 +6,6 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 public class MyFrame extends JFrame {
-    private Calendar calendar;
     private SimpleDateFormat timeFormat,dayFormat,dateFormat;
     private JLabel timeLabel,dayLabel,dateLabel;
     String time,day,date;
