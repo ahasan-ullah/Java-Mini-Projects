@@ -7,9 +7,9 @@ import java.util.Calendar;
 
 public class MyFrame extends JFrame {
     private Calendar calendar;
-    private SimpleDateFormat timeFormat;
-    private JLabel timeLabel;
-    String time;
+    private SimpleDateFormat timeFormat,dayFormat;
+    private JLabel timeLabel,dayLabel;
+    String time,day;
     MyFrame(){
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setTitle("Clock");
@@ -18,6 +18,7 @@ public class MyFrame extends JFrame {
         this.setResizable(false);
 
         timeFormat=new SimpleDateFormat("hh:mm:ss a");
+        dayFormat=new SimpleDateFormat("EEEE");
 
         timeLabel=new JLabel();
         timeLabel.setFont(new Font("Verdana", Font.PLAIN, 50));
@@ -25,8 +26,12 @@ public class MyFrame extends JFrame {
         timeLabel.setBackground(Color.BLACK);
         timeLabel.setOpaque(true);
 
+        dayLabel=new JLabel();
+        dayLabel.setFont(new Font("Ink Free", Font.PLAIN, 50));
+
 
         this.add(timeLabel);
+        this.add(dayLabel);
         this.setVisible(true);
 
         setTime();
@@ -36,6 +41,8 @@ public class MyFrame extends JFrame {
             time = timeFormat.format(Calendar.getInstance().getTime());
             timeLabel.setText(time);
 
+            day=dayFormat.format(Calendar.getInstance().getTime());
+            dayLabel.setText(day);
             try{
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
