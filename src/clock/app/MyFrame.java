@@ -20,7 +20,10 @@ public class MyFrame extends JFrame {
         timeFormat=new SimpleDateFormat("hh:mm:ss a");
 
         timeLabel=new JLabel();
-
+        timeLabel.setFont(new Font("Verdana", Font.PLAIN, 50));
+        timeLabel.setForeground(new Color(0x00FF00));
+        timeLabel.setBackground(Color.BLACK);
+        timeLabel.setOpaque(true);
 
 
         this.add(timeLabel);
