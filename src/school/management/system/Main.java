@@ -25,6 +25,29 @@ public class Main {
 
         School cbbhs=new School(teacherList,studentList);
 
+        Teacher megan = new Teacher(6,"Megan", 900);
+
+        cbbhs.addTeachers(megan);
+
+
         monir.paysFees(5000);
+        bashir.paysFees(6000);
+        System.out.println("CBBHS has earned $"+ cbbhs.getTotalMoneyEarned());
+
+        System.out.println("------Making SCHOOL PAY SALARY----");
+        rahim.receiveSalary(rahim.getSalary());
+        System.out.println("GHS has spent for salary to " + rahim.getName()
+                +" and now has $" + cbbhs.getTotalMoneyEarned());
+
+        karim.receiveSalary(karim.getSalary());
+        System.out.println("CBBHS has spent for salary to " + karim.getName()
+                +" and now has $" + cbbhs.getTotalMoneyEarned());
+
+
+        System.out.println(karim);
+
+        faruk.receiveSalary(faruk.getSalary());
+
+        System.out.println(faruk);
     }
 }
