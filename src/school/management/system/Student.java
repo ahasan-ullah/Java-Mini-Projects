@@ -22,4 +22,23 @@ public class Student {
         this.name=name;
         this.grade=grade;
     }
+
+    //not going to alter students name,students id
+
+    /**
+     * Used to update the students grade
+     * @param grade new grade of the student
+     */
+    public void setGrade(int grade){
+        this.grade=grade;
+    }
+
+    /**
+     * Add the fess to fees paid
+     * The school is going to receive the funds.
+     * @param fees the fees that student pays
+     */
+    public void updateFeespaid(int fees){
+        feesPaid+=fees;
+    }
 }
