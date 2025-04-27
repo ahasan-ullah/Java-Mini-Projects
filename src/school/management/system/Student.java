@@ -41,4 +41,39 @@ public class Student {
     public void updateFeespaid(int fees){
         feesPaid+=fees;
     }
+
+    /**
+     * @return id of the student
+     */
+    public int getId() {
+        return id;
+    }
+
+    /**
+     * @return grade of the student
+     */
+    public int getGrade() {
+        return grade;
+    }
+
+    /**
+     * @return name of the student
+     */
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * @return feespaid of the student
+     */
+    public int getFeesPaid() {
+        return feesPaid;
+    }
+
+    /**
+     * @return totalfees of the student
+     */
+    public int getFeesTotal() {
+        return feesTotal;
+    }
 }
