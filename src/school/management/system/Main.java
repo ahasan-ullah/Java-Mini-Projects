@@ -25,6 +25,6 @@ public class Main {
 
         School cbbhs=new School(teacherList,studentList);
 
-
+        monir.paysFees(5000);
     }
 }
