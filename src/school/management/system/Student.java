@@ -40,6 +40,7 @@ public class Student {
      */
     public void paysFees(int fees){
         feesPaid+=fees;
+        School.updateTotalMoneyEarned(feesPaid);
     }
 
     /**

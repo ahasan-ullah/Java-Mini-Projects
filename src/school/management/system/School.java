@@ -61,7 +61,7 @@ public class School {
      * adds total money earned
      * @param moneyEarned total money earned by the school
      */
-    public void updateTotalMoneyEarned(int moneyEarned) {
+    public static void updateTotalMoneyEarned(int moneyEarned) {
         totalMoneyEarned += moneyEarned;
     }
 
